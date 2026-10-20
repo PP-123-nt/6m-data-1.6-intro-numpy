@@ -128,6 +128,7 @@ np.__version__
 
 If this works, your local Jupyter environment in VS Code is ready.
 
+
 <img width="692" height="532" alt="image" src="https://github.com/user-attachments/assets/eb955c15-cf3f-4a3a-ae7b-e16b0d0bfaf7" />
 
 
@@ -153,6 +154,10 @@ np.__version__
 ```
 
 If this runs successfully, you are ready to use Colab’s backend while working in the VS Code interface.
+
+**Choose Auto Connect for first time setting up**
+<img width="824" height="390" alt="image" src="https://github.com/user-attachments/assets/de59f122-2e90-425d-af2f-8c15ab2d63e4" />
+
 
 ---
 
@@ -215,6 +220,15 @@ For the lab, please **choose one** environment:
   - You have successfully run a Colab notebook with `import numpy as np`
 
 You do **not** need to install NumPy separately if you use Colab; it is already included.
+
+
+**select/switch to A or B environment from kernel button (in green)**
+<img width="809" height="98" alt="image" src="https://github.com/user-attachments/assets/945b972d-53b9-4b07-98ca-16daf26ca227" />
+
+
+
+
+
 
 ---
 
