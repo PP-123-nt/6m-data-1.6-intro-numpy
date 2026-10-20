@@ -19,7 +19,9 @@ You'll use NumPy throughout the rest of this course as the underlying engine for
 
 **Watch [NumPy Intro Video](https://www.youtube.com/watch?v=SuI27ERy0-A)**
 
----
+<img width="656" height="218" alt="M1 6" src="https://github.com/user-attachments/assets/9cbee189-e548-4a0c-94ff-49d6e87b792b" />
+
+
 
 ## 1\. What is a Jupyter Notebook?
 
