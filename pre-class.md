@@ -91,6 +91,20 @@ conda activate pds
 
 4. In VS Code, select this environment as the kernel: open the notebook, click the kernel picker (top-right of the notebook), and choose **pds**.
 
+
+  a) selecting the kernel in the notebook, a dropdown menu will appear at the top of the screen, select Python Environments....
+<img width="1195" height="220" alt="image" src="https://github.com/user-attachments/assets/f895858b-e2d0-4b53-8fc9-5d597b6e17e1" />
+
+  b) a list of available Python environments will show up, look for the one labeled pds
+<img width="602" height="178" alt="image" src="https://github.com/user-attachments/assets/6b7ebc77-02b4-4bdb-a9a1-66d9571f7189" />
+
+
+  c) once selected, the top right corner will change from "Select Kernel" to showing the Python version and the environment name (e.g., Python 3.10.x ('pds')).
+<img width="1354" height="135" alt="image" src="https://github.com/user-attachments/assets/8bd3d981-7da4-49b0-9b41-7939970308ee" />
+
+
+
+
 ### 2.3. Test Jupyter notebooks in VS Code (local Python)
 
 1. Open VS Code.  
