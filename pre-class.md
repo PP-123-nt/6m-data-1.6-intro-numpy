@@ -128,6 +128,13 @@ np.__version__
 
 If this works, your local Jupyter environment in VS Code is ready.
 
+<img width="692" height="532" alt="image" src="https://github.com/user-attachments/assets/eb955c15-cf3f-4a3a-ae7b-e16b0d0bfaf7" />
+
+
+
+
+
+
 ### 2.4. (Optional) Use Colab as the environment in VS Code
 
 If you installed the **Colab** extension, you can run notebooks on Colab from within VS Code:
