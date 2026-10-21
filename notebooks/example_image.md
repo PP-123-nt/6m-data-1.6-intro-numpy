@@ -20,3 +20,10 @@ print(f"\nShape: {arr2.shape}, \nDtype: {arr2.dtype}, \nDimensions: {arr2.ndim}"
 
 
 
+<img width="763" height="709" alt="image" src="https://github.com/user-attachments/assets/afcae1c9-b812-4f4b-a1d3-639cc2588abd" />
+
+
+
+
+
+
