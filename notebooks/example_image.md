@@ -119,3 +119,109 @@ row 1 Branch B  [    20              30                 6    ]
 
 <img width="326" height="221" alt="image" src="https://github.com/user-attachments/assets/c395a5a3-2820-41a6-acc5-c6df6acbcc02" />
 
+
+## **Part 4: Indexing and Slicing**
+
+  ```
+# [Demo] Slicing patterns
+arr = np.arange(10)  # array: 0,1,2,...,9
+print("arr:", arr)
+
+print("\narr[2:5]   (index 2 up to 5):", arr[2:5])       # elements at index 2,3,4 - stop index NOT included
+print("arr[:4]    (start to index 4):", arr[:4])         # elements at index 0,1,2,3
+print("arr[6:]    (index 6 to end):  ", arr[6:])         # elements at index 6,7,8,9
+print("arr[::2]   (every 2nd item):  ", arr[::2])        # step of 2 - skips every other element
+print("arr[::-1]  (reversed):        ", arr[::-1])       # step of -1 - walks backwards through array
+print("arr[-3:]   (last 3 items):    ", arr[-3:])        # negative index counts from the end
+
+arr2d = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])  # 3x3 grid
+print("\narr2d:\n", arr2d)
+print("\narr2d[1]     (row 1 only):        ", arr2d[1])        # single row -> returned as 1D array
+print("arr2d[:, 0]  (column 0 only):     ", arr2d[:, 0])       # single column -> returned as 1D array
+print("arr2d[1, 2]  (row 1, col 2):      ", arr2d[1, 2])       # single element
+print("arr2d[::-1]  (rows reversed):\n", arr2d[::-1])          # reverses row order, columns unchanged
+  ```
+
+  ```
+# [Output]
+arr: [0 1 2 3 4 5 6 7 8 9]
+
+arr[2:5]   (index 2 up to 5): [2 3 4]
+arr[:4]    (start to index 4): [0 1 2 3]
+arr[6:]    (index 6 to end):  [6 7 8 9]
+arr[::2]   (every 2nd item):     [0 2 4 6 8]
+arr[::-1]  (reversed):          [9 8 7 6 5 4 3 2 1 0]
+arr[-3:]   (last 3 items):      [7 8 9]
+
+arr2d:
+ [[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+
+arr2d[1]     (row 1 only):          [4 5 6]
+arr2d[:, 0]  (column 0 only):       [1 4 7]
+arr2d[1, 2]  (row 1, col 2):        6
+arr2d[::-1]  (rows reversed):
+ [[7 8 9]
+ [4 5 6]
+ [1 2 3]]
+  ```
+
+💡💡💡**Real Life Example: a café sales**💡💡💡
+
+Daily coffees sold over 10 days:
+
+```
+import numpy as np
+
+sales = np.array([12, 15, 11, 18, 20, 25, 30, 14, 16, 19])
+#  day:            1   2   3   4   5   6   7   8   9  10
+#  index:          0   1   2   3   4   5   6   7   8   9
+
+print("Days 3 to 5:        ", sales[2:5])
+print("First 4 days:       ", sales[:4])
+print("Day 7 onwards:      ", sales[6:])
+print("Every 2nd day:      ", sales[::2])
+print("Newest to oldest:   ", sales[::-1])
+print("Last 3 days:        ", sales[-3:])
+```
+
+Output
+```
+Days 3 to 5:         [11 18 20]
+First 4 days:        [12 15 11 18]
+Day 7 onwards:       [30 14 16 19]
+Every 2nd day:       [12 11 20 30 16]
+Newest to oldest:    [19 16 14 30 25 20 18 11 15 12]
+Last 3 days:         [14 16 19]
+```
+
+Revenue by branch (rows = Branch A, B, C; columns = coffee, sandwich, cake):
+```
+#                                item 1      item 2      item 3
+#                                coffee      sandwich    cake
+#   column index:                  0           1           2
+# branch 1 (Branch A) -> row 0    [20          12         10]
+# branch 2 (Branch B) -> row 1    [20          30          6]
+# branch 3 (Branch C) -> row 2    [15          18          9]
+
+revenue = np.array([[20, 12, 10],
+                    [20, 30,  6],
+                    [15, 18,  9]])
+
+print("Branch B only:      ", revenue[1])
+print("Coffee, all branches:", revenue[:, 0])
+print("Branch B cake:      ", revenue[1, 2])
+print("Branches reversed:\n", revenue[::-1])
+```
+
+Output
+```
+Branch B only:       [20 30  6]
+Coffee, all branches: [20 20 15]
+Branch B cake:       6
+Branches reversed:
+ [[15 18  9]
+ [20 30  6]
+ [20 12 10]]
+```
