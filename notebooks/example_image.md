@@ -65,3 +65,57 @@ adjustments = np.array(['1.25', '-9.6', '42'])
 adjustments_float = adjustments.astype(float)
 print(adjustments_float, adjustments_float.dtype)  -- [ 1.25 -9.6  42.  ] float64
   ```
+
+## **Part 3: Arithmetic & Broadcasting**
+
+  ```python
+# [DEMO] Arithmetic & Broadcasting
+arr = np.array([[1., 2., 3.], [4., 5., 6.]])  # 2D array, 2 rows x 3 columns
+
+print("Original array:\n", arr)
+
+print("\nElement-wise multiplication (arr * arr):\n", arr * arr)  # each number multiplied by itself, position by position
+
+print("\nBroadcasting scalar (arr + 10):\n", arr + 10)  # 10 is "stretched" to match arr's shape, then added to every element
+
+print("\nBroadcasting scalar (1 / arr):\n", 1 / arr)  # single number 1 applied to every element automatically
+  ```
+<img width="326" height="292" alt="image" src="https://github.com/user-attachments/assets/4bbf0500-2622-4bfd-ac2c-4fbd185b45c5" />
+
+
+💡💡💡**Real Life Example: a café’s prices at two branches**💡💡💡
+
+  ```python
+import numpy as np
+
+# rows = Branch A, Branch B; columns = coffee, sandwich, cake
+prices = np.array([[2., 3., 5.],
+                   [4., 5., 6.]])
+
+quantities = np.array([[10., 4., 2.],
+                       [5., 6., 1.]])
+
+print("Revenue (prices * quantities):\n", prices * quantities)
+print("\nWith $1 service charge (prices + 1):\n", prices + 1)
+print("\nWith 10% tax (prices * 1.1):\n", prices * 1.1)
+  ```
+
+  ```
+Price
+                  col 0 coffee   col 1 sandwich     col 2 cake  
+row 0 Branch A  [    2                3                 5     ]
+row 1 Branch B  [    4                5                 6     ]
+
+Quantity
+                  col 0 coffee   col 1 sandwich     col 2 cake  
+row 0 Branch A  [    10               4                 2     ]
+row 1 Branch B  [     5               6                 1     ]
+
+Revenue (Price * Quantity)
+                col 0 coffee   col 1 sandwich      col 2 cake
+row 0 Branch A  [    20              12                10    ]
+row 1 Branch B  [    20              30                 6    ]
+  ```
+
+<img width="326" height="221" alt="image" src="https://github.com/user-attachments/assets/c395a5a3-2820-41a6-acc5-c6df6acbcc02" />
+
