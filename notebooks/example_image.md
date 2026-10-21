@@ -100,7 +100,7 @@ print("\nWith $1 service charge (prices + 1):\n", prices + 1)
 print("\nWith 10% tax (prices * 1.1):\n", prices * 1.1)
   ```
 
-  ```
+  ```python
 Price
                   col 0 coffee   col 1 sandwich     col 2 cake  
 row 0 Branch A  [    2                3                 5     ]
@@ -122,7 +122,7 @@ row 1 Branch B  [    20              30                 6    ]
 
 ## **Part 4: Indexing and Slicing**
 
-  ```
+  ```python
 # [Demo] Slicing patterns
 arr = np.arange(10)  # array: 0,1,2,...,9
 print("arr:", arr)
@@ -142,7 +142,7 @@ print("arr2d[1, 2]  (row 1, col 2):      ", arr2d[1, 2])       # single element
 print("arr2d[::-1]  (rows reversed):\n", arr2d[::-1])          # reverses row order, columns unchanged
   ```
 
-  ```
+  ```python
 # [Output]
 arr: [0 1 2 3 4 5 6 7 8 9]
 
@@ -171,7 +171,7 @@ arr2d[::-1]  (rows reversed):
 
 Daily coffees sold over 10 days:
 
-```
+  ```python
 import numpy as np
 
 sales = np.array([12, 15, 11, 18, 20, 25, 30, 14, 16, 19])
@@ -187,7 +187,7 @@ print("Last 3 days:        ", sales[-3:])
 ```
 
 Output
-```
+  ```python
 Days 3 to 5:         [11 18 20]
 First 4 days:        [12 15 11 18]
 Day 7 onwards:       [30 14 16 19]
@@ -197,7 +197,7 @@ Last 3 days:         [14 16 19]
 ```
 
 Revenue by branch (rows = Branch A, B, C; columns = coffee, sandwich, cake):
-```
+  ```python
 #                                item 1      item 2      item 3
 #                                coffee      sandwich    cake
 #   column index:                  0           1           2
@@ -216,7 +216,7 @@ print("Branches reversed:\n", revenue[::-1])
 ```
 
 Output
-```
+  ```python
 Branch B only:       [20 30  6]
 Coffee, all branches: [20 20 15]
 Branch B cake:       6
@@ -225,3 +225,47 @@ Branches reversed:
  [20 30  6]
  [20 12 10]]
 ```
+
+
+## **Part 7: Linear Algebra**
+
+<img width="1000" height="304" alt="image" src="https://github.com/user-attachments/assets/cae94e67-d8a1-4aea-9c43-18486146d644" />
+
+
+💡💡💡**Real Life Example: ingredients needed at each café branch**💡💡💡
+
+  ```python
+import numpy as np
+
+#                  coffee  sandwich  cake
+orders = np.array([[10,      4,        2],     # Branch A (branch 1) -> row 0
+                   [ 5,      6,        1]])    # Branch B (branch 2) -> row 1
+# shape (2, 3): 2 branches x 3 items
+
+#                  milk (ml)  flour (g)
+recipe = np.array([[200,        0],    # coffee
+                   [  0,      100],    # sandwich
+                   [100,      250]])   # cake
+# shape (3, 2): 3 items x 2 ingredients
+
+needed = orders @ recipe
+print(needed)
+print(needed.shape)
+```
+
+  ```python
+# Output
+[[2200  900]
+ [1100  850]]
+(2, 2)
+```
+
+<img width="700" height="410" alt="image" src="https://github.com/user-attachments/assets/02c9a85b-2208-4ebb-a705-2497a98097b8" />
+
+Reading the result:
+
+ - needed[0, 0] is Branch A’s milk: 2200 ml
+
+ - needed[1, 1] is Branch B’s flour: 850 g
+
+ - needed[:, 0] is milk needed by all branches: [2200 1100]
