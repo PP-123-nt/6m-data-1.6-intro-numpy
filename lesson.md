@@ -86,7 +86,7 @@ Notebook section: **"Part 1: Performance Benchmark"**
 
 **Why this Part exists:** Python lists work fine for 10 items. For 10 million numbers, you need a data structure designed for math — with a fixed type, a declared shape, and no Python overhead. That's the ndarray.
 
-Notebook section: **"Part 2: The ndarray"**
+Notebook section: **"Part 2: The ndarray"**    💡💡ndarray: number of dimension array💡💡
 
 **Before the notebook, picture this:**
 
