@@ -269,3 +269,9 @@ Reading the result:
  - needed[1, 1] is Branch B’s flour: 850 g
 
  - needed[:, 0] is milk needed by all branches: [2200 1100]
+
+🎯🎯🎯 **NOTES** 🎯🎯🎯
+
+Answer will be wrong if the orders are not in the same sequence as the recipe. NumPy matches by position, not by name. It has no idea that column 1 means “sandwich”, so it just multiplies column 1 of orders with row 1 of recipe.
+
+Good habit: keep the item order identical in both tables and write it in a comment above each one, as in your screenshot (coffee, sandwich, cake). If you want the names to be matched automatically, that’s what pandas is for, since it keeps row and column labels. Plain NumPy only stores the numbers.
